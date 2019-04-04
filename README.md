@@ -1,17 +1,3 @@
-Real good time
-
-///// ROUTES
-
-
-///// HBS
-
-
-///// DATABASES
-
-**Tables**
-Students
-Comments
-Reflection
 
 **MVP**
 
