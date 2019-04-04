@@ -9,9 +9,9 @@ router.get('/', (req, res) => {
 })
 
 router.get('/students', (req, res) => {
-  db.getUser()
-    .then(users => {
-      res.render('index', { users })
+  db.getStudents()
+    .then(students => {
+      res.render('index', { students })
     })
     .catch(err => {
       res.status(500).send('DATABASE ERROR:' + err.message)
@@ -19,7 +19,7 @@ router.get('/students', (req, res) => {
 })
 
 router.get('/profile/:id', (req, res) => {
-  db.getUserById(req.params.id)
+  db.getStudent(req.params.id)
     .then(student => res.render('profile', { student }))
     .catch(err => res.status(500).send(err.message))
 })
@@ -31,5 +31,6 @@ router.post('/profile/:id', (req, res) => {
     .then(() => res.redirect('/users'))
     .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })
+
 
 module.exports = router

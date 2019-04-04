@@ -10,11 +10,14 @@ module.exports = {
 }
 
 function getStudents (db = connection) {
-  return db('students').select()
+  return db('students')
+    .select()
 }
 
 function getStudent (id, db = connection) {
-  return db('students').where('id', id).first()
+  return db('students')
+  .where('id', id)
+  .select()
 }
 
 function displayReview (id, db = connection) {
@@ -22,6 +25,7 @@ function displayReview (id, db = connection) {
     .join('students', 'students.id', 'reviews_student.id')
     .where('students.id', id)
     .select()
+
 }
 
 function addReview (id, db = connection) {

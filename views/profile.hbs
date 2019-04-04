@@ -1,17 +1,20 @@
 <div class="container">
     <div class="row">
+    
       <div class="col-sm-4">
-         <img src="{{img_url}}" class="profileImg">
+         Picture will go here <br> <img src="{{img_url}}" class="profileImg">
       </div>
       <div class="col-sm-8">
-        <h1>{{student_name}}</h1><br>
-        <h1>{{slack_id}}</h1><br>
+        <h1>Name: {{student_name}}</h1><br>
+        <h1>Slack Id: {{slack_id}}</h1><br>
+    
         {{#each reviews}}
         <ul>
           <li><a href="/viewReview/{{id}}">{{fist_of_five}}</a></li>
         </ul>
         {{/each}}
     </div>
+
     </div>
 </div>
 
