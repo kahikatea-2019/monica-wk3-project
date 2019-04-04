@@ -1,0 +1,14 @@
+
+{{#each students}}
+<div class="row">
+  <div class='col-2'></div>
+  <div class='col-2'>
+   <a href="/profile/{{id}}"> <img src="{{img_url}}" class="profileSummaryImg"></a>
+   </div>
+  <div class='col-6'>
+    <h1>{{student_name}}</h1>
+    <h1>{{slack_id}}</h1>
+  </div>
+  <div class='col-2'></div>
+</div>
+{{/each}}
