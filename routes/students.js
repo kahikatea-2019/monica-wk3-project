@@ -20,14 +20,17 @@ router.get('/students', (req, res) => {
 
 router.get('/profile/:id', (req, res) => {
   db.getStudent(req.params.id)
-    .then(student => res.render('profile', { student }))
+    .then(students => res.render('profile', { students }))
     .catch(err => res.status(500).send(err.message))
 })
 
+
 router.post('/profile/:id', (req, res) => {
+  
+  
   const name = req.body.name
   const email = req.body.email
-  db.newUser(name, email)
+  db.addReview(name, email)
     .then(() => res.redirect('/users'))
     .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })

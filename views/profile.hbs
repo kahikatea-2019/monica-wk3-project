@@ -1,3 +1,6 @@
+
+{{#each students}}
+
 <div class="container">
     <div class="row">
     
@@ -7,16 +10,16 @@
       <div class="col-sm-8">
         <h1>Name: {{student_name}}</h1><br>
         <h1>Slack Id: {{slack_id}}</h1><br>
-    
-        {{#each reviews}}
+ 
         <ul>
           <li><a href="/viewReview/{{id}}">{{fist_of_five}}</a></li>
         </ul>
-        {{/each}}
+   
     </div>
-
     </div>
 </div>
+
+{{/each}}
 
 <div class="container">
   <form class="form" action= "" method="post">
@@ -43,7 +46,7 @@
     <div class="row">
       <div class="col-sm-6"></div>
          <label for="fist_of_five" class="form-item">
-           E-mail:
+           Fist of Five
     <input type="text" name="fist_of_five" value="{{fist_of_five}}">
   </label>
       <div class="col-sm-6"></div>
