@@ -6,15 +6,17 @@
       <div class="col-sm-8">
         <h1>{{student_name}}</h1><br>
         <h1>{{slack_id}}</h1><br>
-        <h1>PLACEHOLDER</h1><br>
-        <h1>PLACEHOLDER</h1><br>
-        <h1>PLACEHOLDER</h1><br>
-        <h1>PLACEHOLDER</h1><br>
+        {{#each reviews}}
+        <ul>
+          <li><a href="/viewReview/{{id}}">{{fist_of_five}}</a></li>
+        </ul>
+        {{/each}}
     </div>
     </div>
 </div>
 
 <div class="container">
+  <form class="form" action= "" method="post">
     <div class="row">
       <div class="col-sm-6">
         <h2>Leave review here</h2>
@@ -26,7 +28,10 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6"></div>
-        <h2>Your name</h2>
+         <label for="input_name" class="form-item">
+           Name:
+    <input type="text" name="input_name" value="{{input_name}}">
+  </label>
       <div class="col-sm-6"></div>
    </div>
 </div>
@@ -34,7 +39,10 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-6"></div>
-        <h2>Rating</h2>
+         <label for="fist_of_five" class="form-item">
+           E-mail:
+    <input type="text" name="fist_of_five" value="{{fist_of_five}}">
+  </label>
       <div class="col-sm-6"></div>
    </div>
 </div>
@@ -42,6 +50,23 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-12"></div>
-        <h2>Leave a comment</h2>
+        <label for="review_comment" class="form-item">
+          Leave a written review:<br>
+
+    <input type="text" name="review_comment" value="{{review_comment}}">
+  </label>
    </div>
+   <input type="submit" name="" value="Submit">
+  </form>
 </div>
+
+
+
+
+
+ 
+  
+ 
+
+   
+  
