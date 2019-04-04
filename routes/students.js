@@ -5,7 +5,31 @@ const db = require('../db')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-  res.send('heloooo world')
+  res.redirect('students')
+})
+
+router.get('/students', (req, res) => {
+  db.getUser()
+    .then(users => {
+      res.render('index', { users })
+    })
+    .catch(err => {
+      res.status(500).send('DATABASE ERROR:' + err.message)
+    })
+})
+
+router.get('/profile/:id', (req, res) => {
+  db.getUserById(req.params.id)
+    .then(student => res.render('profile', { student }))
+    .catch(err => res.status(500).send(err.message))
+})
+
+router.post('/profile/:id', (req, res) => {
+  const name = req.body.name
+  const email = req.body.email
+  db.newUser(name, email)
+    .then(() => res.redirect('/users'))
+    .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })
 
 module.exports = router
