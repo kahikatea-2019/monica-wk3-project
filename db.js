@@ -40,4 +40,3 @@ function addComment (id, db = connection) {
     .where('reviews.id', id)
     .select()
 }
-
