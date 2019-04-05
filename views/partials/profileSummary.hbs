@@ -2,15 +2,15 @@
 {{#each students}}
 <div class="container-fluid">
 <div class="row" >
-  <div class='col-2'></div>
-  <div class='col-2'style="background-color: gray">
-   <a href="/profile/{{id}}"> <img src="{{img_url}}" class="profileSummaryImg"></a>
+  <div class='col-md-2'></div>
+  <div class='col-md-2'style="background-color: gray">
+   <a href="/profile/{{id}}"><img src="{{img_url}}" class="profileSummaryImg"></a>
    </div>
-  <div class='col-6'style="background-color: gray">
+  <div class='col-md-6'style="background-color: gray">
     <h1>{{student_name}}</h1>
     <h1>{{slack_id}}</h1>
   </div>
-  <div class='col-2'></div>
+  <div class='col-md-2'></div>
 </div>
 </div>
 {{/each}}
