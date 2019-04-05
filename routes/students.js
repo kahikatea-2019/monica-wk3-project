@@ -28,7 +28,7 @@ router.post('/profile/:id', (req, res) => {
   const name = req.body.name
   const email = req.body.email
   db.addReview(name, email)
-    .then(() => res.redirect('/users'))
+    .then(() => res.redirect('/students'))
     .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })
 
