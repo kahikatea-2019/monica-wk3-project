@@ -6,7 +6,8 @@ module.exports = {
   getStudents: getStudents,
   getStudent: getStudent,
   displayReview: displayReview,
-  addReview: addReview
+  addReview: addReview,
+  addComment: addComment
 }
 
 function getStudents (db = connection) {
@@ -16,8 +17,8 @@ function getStudents (db = connection) {
 
 function getStudent (id, db = connection) {
   return db('students')
-  .where('id', id)
-  .select()
+    .where('id', id)
+    .select()
 }
 
 function displayReview (id, db = connection) {
@@ -25,11 +26,17 @@ function displayReview (id, db = connection) {
     .join('students', 'students.id', 'reviews_student.id')
     .where('students.id', id)
     .select()
-
 }
 
 function addReview (id, input_name, review_comment, db = connection) {
   return db('reviews')
     .insert({ input_name: input_name, fist_of_five: fist_of_five, review_comment: review_comment })
+    .select()
+}
+
+function addComment (id, db = connection) {
+  return db('comments')
+    .join('reviews', 'reviews.id', 'comments.review_id')
+    .where('reviews.id', id)
     .select()
 }

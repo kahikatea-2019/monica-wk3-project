@@ -24,16 +24,12 @@ router.get('/profile/:id', (req, res) => {
     .catch(err => res.status(500).send(err.message))
 })
 
-
 router.post('/profile/:id', (req, res) => {
-  
-  
   const name = req.body.name
   const email = req.body.email
   db.addReview(name, email)
     .then(() => res.redirect('/users'))
     .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })
-
 
 module.exports = router
