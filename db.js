@@ -28,7 +28,7 @@ function displayReview (id, db = connection) {
     .select()
 }
 
-function addReview (id, input_name, review_comment, db = connection) {
+function addReview (id, input_name, review_comment, fist_of_five, db = connection) {
   return db('reviews')
     .insert({ input_name: input_name, fist_of_five: fist_of_five, review_comment: review_comment })
     .select()
