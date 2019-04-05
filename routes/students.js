@@ -28,13 +28,11 @@ router.post('/profile/:id', (req, res) => {
   const input_name = req.body.input_name
   const review_comment = req.body.review_comment
   const fist_of_five = req.body.fist_of_five
-  const id = req.params.id
-  console.log(req.body)
-  console.log(req.params)
-  db.addReview(input_name, fist_of_five, review_comment)
-    .then(() => res.redirect(`/profile/${id}`))
+  const student_id = req.params.id
+  db.addReview(input_name, fist_of_five, review_comment, student_id)
+    .then(() => res.redirect(`/profile/${student_id}`))
     .catch(err => res.status(500).send('DATABASE ERROR: ' + err.message))
 })
 
 module.exports = router
-//helpgsdfsdf
+// helpgsdfsdf
