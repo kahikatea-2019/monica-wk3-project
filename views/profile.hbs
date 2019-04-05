@@ -21,7 +21,14 @@
 
 {{/each}}
 
-<div class="container">
+<form method="POST" action="{{id}}">
+  <input type="text" name="input_name">
+  <input type="text" name="fist_of_five">
+  <input type="text" name="review_comment">
+  <button type="submit">SUBMIT</button>
+</form>
+
+{{!-- <div class="container">
   <form class="form" action= "" method="post">
     <div class="row">
       <div class="col-sm-6">
@@ -64,7 +71,7 @@
    </div>
    <input type="submit" name="" value="Submit">
   </form>
-</div>
+</div> --}}
 
 
 
