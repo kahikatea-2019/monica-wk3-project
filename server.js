@@ -8,9 +8,15 @@ const server = express()
 
 // M I D D L E W A R E
 
-server.engine('hbs', hbs({ extname: 'hbs' }))
+server.use(express.urlencoded({ extended: false }))
+server.use(express.static('public'))
+
+server.engine('hbs', hbs({
+  defaultLayout: 'main',
+  extname: 'hbs'
+}))
+
 server.set('view engine', 'hbs')
-server.use(express.urlencoded({ extended: true }))
 
 // R O U T E S
 
