@@ -10,17 +10,16 @@
       <div class="col-sm-8">
         <h1>Name: {{student_name}}</h1><br>
         <h1>Slack Id: {{slack_id}}</h1><br>
- 
-        <ul>
-          <li><a href="/viewReview/{{id}}">{{fist_of_five}}</a></li>
-        </ul>
-   
+  
     </div>
     </div>
 </div>
 
 {{/each}}
 
+
+
+<br><br><br><br><br><br><br>
 <form method="POST" action="{{id}}">
   <input type="text" name="input_name">
   <input type="text" name="fist_of_five">
