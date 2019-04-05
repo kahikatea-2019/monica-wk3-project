@@ -18,7 +18,7 @@ server.engine('hbs', hbs({
 
 server.set('view engine', 'hbs')
 
-// R O U T E S
+// R O U T E SS
 
 server.use('/', studentRoutes)
 
